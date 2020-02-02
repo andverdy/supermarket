@@ -13,7 +13,7 @@
 <body>
 	<h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-	&nbsp &nbsp &nbsp &nbsp  --|| SUPERMARKET SHOP ||--  </h1>
+	&nbsp &nbsp &nbsp &nbsp  --|| SUPERMARKET SHOP ONLINE||--  </h1>
 
 	<img
 		src="https://www.friulioggi.it/wp-content/uploads/2019/02/supermer-1-1-1500x630.jpg"
