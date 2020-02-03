@@ -36,7 +36,7 @@ public class ArticleDaoImpl implements ArticleDao {
 				article.setIdIva(rs.getInt("IDIVA"));
 				article.setIdStatoArt(rs.getInt("IDSTATOART"));
 				article.setIdFamAss(rs.getInt("IDFAMASS"));
-				
+
 				listArticles.add(article);
 			}
 			rs.close();
@@ -64,16 +64,14 @@ public class ArticleDaoImpl implements ArticleDao {
 	@Override
 	public void insArticle(Article article) {
 
-		  
 		String sql = "INSERT INTO `alphashop`.`articoli` (`CODART`, `DESCRIZIONE`, `PZCART`, `IDIVA`, `IDSTATOART`, `IDFAMASS`) VALUES (?, ?, ?, ?, ?, ?);";
 		Connection conn = null;
 		PreparedStatement stm = null;
-		
-		
+
 		try {
-			
+
 			conn = ConnectionConfig.getConnection();
-			
+
 			stm = conn.prepareStatement(sql);
 
 			stm.setString(1, article.getCodArt());
@@ -82,23 +80,20 @@ public class ArticleDaoImpl implements ArticleDao {
 			stm.setInt(4, article.getIdIva());
 			stm.setInt(5, article.getIdStatoArt());
 			stm.setInt(6, article.getIdFamAss());
-			
-			stm.executeUpdate();  
-				
-				/*public boolean insertBook(Book book) throws SQLException {
-		        String sql = "INSERT INTO book (title, author, price) VALUES (?, ?, ?)";
-		        connect();
-		         
-		        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-		        statement.setString(1, book.getTitle());
-		        statement.setString(2, book.getAuthor());
-		        statement.setFloat(3, book.getPrice());
-		         
-		        boolean rowInserted = statement.executeUpdate() > 0;
-		        statement.close();
-		        disconnect();
-		        return rowInserted;
-		    }*/
+
+			stm.executeUpdate();
+
+			/*
+			 * public boolean insertBook(Book book) throws SQLException { String sql =
+			 * "INSERT INTO book (title, author, price) VALUES (?, ?, ?)"; connect();
+			 * 
+			 * PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+			 * statement.setString(1, book.getTitle()); statement.setString(2,
+			 * book.getAuthor()); statement.setFloat(3, book.getPrice());
+			 * 
+			 * boolean rowInserted = statement.executeUpdate() > 0; statement.close();
+			 * disconnect(); return rowInserted; }
+			 */
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -119,12 +114,10 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	}
 
-	
-
 	@Override
 	public void delArticle() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -132,11 +125,5 @@ public class ArticleDaoImpl implements ArticleDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-	
-		
-
-	
 
 }

@@ -31,7 +31,7 @@ public class ArticlesGetServlet extends HttpServlet {
 		listArticles = articleDao.getArticles();
 
 		request.setAttribute("articlesList", listArticles);
-		request.getRequestDispatcher("WEB-INF/pages/index.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/pages/home.jsp").forward(request, response);
 
 	}
 

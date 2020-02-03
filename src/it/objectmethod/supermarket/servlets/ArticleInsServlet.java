@@ -21,17 +21,17 @@ public class ArticleInsServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		String codArt = request.getParameter("codArt");
+		String codArt = request.getParameter("codart");
 		String descrizione = request.getParameter("descrizione");
-		int pzCart = Integer.parseInt(request.getParameter("pzCart"));
-		int idIva = Integer.parseInt(request.getParameter("idIva"));
-		int idStatoArt = Integer.parseInt(request.getParameter("idStatoArt"));
-		int idFamAss = Integer.parseInt(request.getParameter("idFamAss"));
+		int pzCart = Integer.parseInt(request.getParameter("pzcart"));
+		int idIva = Integer.parseInt(request.getParameter("idiva"));
+		int idStatoArt = Integer.parseInt(request.getParameter("idstatoArt"));
+		int idFamAss = Integer.parseInt(request.getParameter("idfamAss"));
 
 		Article newArticle = new Article(codArt, descrizione, pzCart, idIva, idStatoArt, idFamAss);
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
 		artDaoImpl.insArticle(newArticle);
-		response.sendRedirect("index");
+		response.sendRedirect("viewIns");
 
 	}
 
