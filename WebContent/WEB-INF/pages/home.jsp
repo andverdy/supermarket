@@ -19,11 +19,7 @@
 		src="https://www.friulioggi.it/wp-content/uploads/2019/02/supermer-1-1-1500x630.jpg"
 		alt="Mia Immagine">
 
-	<p>
-
-		<input type="submit" value="Gestione Articoli">
-
-	</p>
+	
 
 	<style>
 table, th, td {
@@ -65,7 +61,7 @@ table, th, td {
 
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${listArticles.idFamAss}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-
+					
 
 			</tr>
 		</c:forEach>

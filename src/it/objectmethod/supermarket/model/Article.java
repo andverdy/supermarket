@@ -6,14 +6,8 @@ public class Article {
 	private String descrizione;
 	private int pzCart;
 	private int idIva;
-	private int idStatoArt;
 	private int idFamAss;
 
-	public Article(String codArt2, String descrizione2, int pzCart2, int idIva2, int idStatoArt2, int idFamAss2) {
-	}
-
-	public Article() {
-	}
 
 	public String getCodArt() {
 		return codArt;
@@ -47,13 +41,6 @@ public class Article {
 		this.idIva = idIva;
 	}
 
-	public int getIdStatoArt() {
-		return idStatoArt;
-	}
-
-	public void setIdStatoArt(int idStatoArt) {
-		this.idStatoArt = idStatoArt;
-	}
 
 	public int getIdFamAss() {
 		return idFamAss;
@@ -66,7 +53,7 @@ public class Article {
 	@Override
 	public String toString() {
 		return "codArt = " + codArt + ", descrizione = " + descrizione + ", pzCart = " + pzCart + ", idIva = " + idIva
-				+ ", idStatoArt = " + idStatoArt + ", idFamAss = " + idFamAss;
+				+ ", idFamAss = " + idFamAss;
 	}
 
 }

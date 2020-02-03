@@ -6,20 +6,20 @@
 	id="WebApp_ID" version="3.0">
 	
 	<servlet>
-		<servlet-name>servlet1</servlet-name>
+		<servlet-name>getArticles</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.ArticlesGetServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>servlet1</servlet-name>
+		<servlet-name>getArticles</servlet-name>
 		<url-pattern>/GetArticles</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>servlet2</servlet-name>
+		<servlet-name>insArticle</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.ArticleInsServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>servlet2</servlet-name>
+		<servlet-name>insArticle</servlet-name>
 		<url-pattern>/InsArticle</url-pattern>
 	</servlet-mapping>
 	

@@ -13,14 +13,11 @@ import it.objectmethod.supermarket.model.Article;
 public class ArticleInsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ArticleInsServlet() {
-		super();
-	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-
+		
 		String codArt = request.getParameter("codart");
 		String descrizione = request.getParameter("descrizione");
 		int pzCart = Integer.parseInt(request.getParameter("pzcart"));
@@ -32,12 +29,9 @@ public class ArticleInsServlet extends HttpServlet {
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
 		artDaoImpl.insArticle(newArticle);
 		response.sendRedirect("viewIns");
-
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
+		
+		
+		
 	}
 
 }

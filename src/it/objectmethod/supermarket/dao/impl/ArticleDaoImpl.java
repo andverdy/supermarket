@@ -34,7 +34,6 @@ public class ArticleDaoImpl implements ArticleDao {
 				article.setDescrizione(rs.getString("DESCRIZIONE"));
 				article.setPzCart(rs.getInt("PZCART"));
 				article.setIdIva(rs.getInt("IDIVA"));
-				article.setIdStatoArt(rs.getInt("IDSTATOART"));
 				article.setIdFamAss(rs.getInt("IDFAMASS"));
 
 				listArticles.add(article);
@@ -64,7 +63,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	@Override
 	public void insArticle(Article article) {
 
-		String sql = "INSERT INTO `alphashop`.`articoli` (`CODART`, `DESCRIZIONE`, `PZCART`, `IDIVA`, `IDSTATOART`, `IDFAMASS`) VALUES (?, ?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO `alphashop`.`articoli` (`CODART`, `DESCRIZIONE`, `PZCART`, `IDIVA`, `IDFAMASS`) VALUES (?, ?, ?, ?, ?);";
 		Connection conn = null;
 		PreparedStatement stm = null;
 
@@ -78,22 +77,11 @@ public class ArticleDaoImpl implements ArticleDao {
 			stm.setString(2, article.getDescrizione());
 			stm.setInt(3, article.getPzCart());
 			stm.setInt(4, article.getIdIva());
-			stm.setInt(5, article.getIdStatoArt());
 			stm.setInt(6, article.getIdFamAss());
 
 			stm.executeUpdate();
 
-			/*
-			 * public boolean insertBook(Book book) throws SQLException { String sql =
-			 * "INSERT INTO book (title, author, price) VALUES (?, ?, ?)"; connect();
-			 * 
-			 * PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-			 * statement.setString(1, book.getTitle()); statement.setString(2,
-			 * book.getAuthor()); statement.setFloat(3, book.getPrice());
-			 * 
-			 * boolean rowInserted = statement.executeUpdate() > 0; statement.close();
-			 * disconnect(); return rowInserted; }
-			 */
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
