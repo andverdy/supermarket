@@ -14,6 +14,7 @@
 		<url-pattern>/GetArticles</url-pattern>
 	</servlet-mapping>
 
+
 	<servlet>
 		<servlet-name>insArticle</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.ArticleInsServlet</servlet-class>
@@ -21,6 +22,15 @@
 	<servlet-mapping>
 		<servlet-name>insArticle</servlet-name>
 		<url-pattern>/InsArticle</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>formOneArticles</servlet-name>
+		<servlet-class>it.objectmethod.supermarket.servlets.FormViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>formOneArticles</servlet-name>
+		<url-pattern>/FormViewServ</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

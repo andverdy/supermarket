@@ -11,15 +11,15 @@
 </head>
 
 <body>
-	<h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	<h1>
+		<br>
+		<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-		&nbsp &nbsp &nbsp &nbsp &nbsp --|| SUPERMARKET SHOP ONLINE||--</h1>
-
-	<img
-		src="https://www.friulioggi.it/wp-content/uploads/2019/02/supermer-1-1-1500x630.jpg"
-		alt="Mia Immagine">
-
-	
+		&nbsp &nbsp &nbsp --|| SUPERMARKET SHOP ONLINE ||--
+	</h1>
+	<br>
+	<br>
+	<br>
 
 	<style>
 table, th, td {
@@ -28,13 +28,19 @@ table, th, td {
 </style>
 </head>
 <body>
+
+	<form method="get">
+		<td>
+			<button formaction="FormViewServ">Inserisci Nuovo Articolo</button>
+		</td>
+	</form> <br>
+
 	<table>
 		<tr>
 			<th>Codice Articolo</th>
 			<th>Descrizione</th>
 			<th>PzCart</th>
 			<th>IdIva</th>
-			<th>IdStatoArt</th>
 			<th>IdFamAss</th>
 
 		</tr>
@@ -56,12 +62,11 @@ table, th, td {
 					${listArticles.idIva}
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
-				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					${listArticles.idStatoArt}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${listArticles.idFamAss}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-					
+
+
 
 			</tr>
 		</c:forEach>

@@ -25,7 +25,7 @@ public class ArticleInsServlet extends HttpServlet {
 		int idStatoArt = Integer.parseInt(request.getParameter("idstatoArt"));
 		int idFamAss = Integer.parseInt(request.getParameter("idfamAss"));
 
-		Article newArticle = new Article(codArt, descrizione, pzCart, idIva, idStatoArt, idFamAss);
+		Article newArticle = new Article();
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
 		artDaoImpl.insArticle(newArticle);
 		response.sendRedirect("viewIns");
