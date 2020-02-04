@@ -20,7 +20,7 @@ public class ArticleDaoImpl implements ArticleDao {
 		Connection conn = null;
 		PreparedStatement stm = null;
 		ResultSet rs = null;
-		List<Article> listArticles = new ArrayList();
+		List<Article> listArticles = new ArrayList<>();
 
 		try {
 			conn = ConnectionConfig.getConnection();
@@ -77,7 +77,7 @@ public class ArticleDaoImpl implements ArticleDao {
 			stm.setString(2, article.getDescrizione());
 			stm.setInt(3, article.getPzCart());
 			stm.setInt(4, article.getIdIva());
-			stm.setInt(6, article.getIdFamAss());
+			stm.setInt(5, article.getIdFamAss());
 
 			stm.executeUpdate();
 

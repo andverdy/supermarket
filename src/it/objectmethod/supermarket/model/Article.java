@@ -9,6 +9,16 @@ public class Article {
 	private int idFamAss;
 
 
+	public Article(String cod, String descr, int pzCart, int iVa, int fms) {
+		this.codArt = cod;
+		this.descrizione = descr;
+		this.pzCart = pzCart;
+		this.idIva = iVa;
+		this.idFamAss = fms;
+	}
+
+	public Article() {}
+	
 	public String getCodArt() {
 		return codArt;
 	}

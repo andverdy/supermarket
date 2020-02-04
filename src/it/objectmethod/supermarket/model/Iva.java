@@ -21,4 +21,11 @@ public class Iva {
 		this.descrizione = descrizione;
 	}
 
+	@Override
+	public String toString() {
+		return "Iva idIva = " + idIva + ", descrizione = " + descrizione;
+	}
+
+	
+	
 }

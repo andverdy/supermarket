@@ -66,8 +66,6 @@ table, th, td {
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${listArticles.idFamAss}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
-
-
 			</tr>
 		</c:forEach>
 

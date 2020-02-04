@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import it.objectmethod.supermarket.dao.ArticleDao;
 import it.objectmethod.supermarket.dao.impl.ArticleDaoImpl;
 import it.objectmethod.supermarket.model.Article;
@@ -36,20 +35,5 @@ public class ArticlesGetServlet extends HttpServlet {
 	}
 
 	
-	
-	
-	
-	
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
-		
-		
-
-
-		
-		
-	}
 
 }

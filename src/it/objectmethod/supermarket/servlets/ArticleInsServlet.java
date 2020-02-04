@@ -18,17 +18,25 @@ public class ArticleInsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String codArt = request.getParameter("codart");
-		String descrizione = request.getParameter("descrizione");
-		int pzCart = Integer.parseInt(request.getParameter("pzcart"));
-		int idIva = Integer.parseInt(request.getParameter("idiva"));
-		int idStatoArt = Integer.parseInt(request.getParameter("idstatoArt"));
-		int idFamAss = Integer.parseInt(request.getParameter("idfamAss"));
+		String cod = request.getParameter("codice");
+		String descr = request.getParameter("descriz");
+		int pzCart = Integer.parseInt(request.getParameter("pezziCart"));
+		int iVa = Integer.parseInt(request.getParameter("iva"));
+		int fms = Integer.parseInt(request.getParameter("fam"));
 
-		Article newArticle = new Article();
+		Article newArticle;
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
-		artDaoImpl.insArticle(newArticle);
-		response.sendRedirect("viewIns");
+		artDaoImpl.insArticle(new Article(cod, descr, pzCart, iVa, fms));
+		
+		
+		/*System.out.println("parametro codice passato??? " + cod);
+		System.out.println("parametro descrizione passato??? " + descr);
+		System.out.println("parametro pezzi cartone passato??? " + pzCart);
+		System.out.println("parametro iva passato??? " + iVa);
+		System.out.println("parametro fms passato??? " + fms);*/
+		
+		
+		request.getRequestDispatcher("WEB-INF/pages/home.jsp").forward(request, response);
 		
 		
 		
