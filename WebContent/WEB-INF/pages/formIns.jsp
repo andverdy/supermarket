@@ -14,7 +14,7 @@
 	<h1>&nbsp&nbsp&nbsp&nbsp&nbsp GESTIONE ARTICOLI SUPERMARKET</h1>
 	<br>
 	<br>
-	<form method="post">
+	<form method="get">
 		<label for="cod">Codice Articolo</label><br> 
 		<input id="cod" type="text" name="codice"><br> <br> 
 		
