@@ -81,7 +81,6 @@ public class ArticleDaoImpl implements ArticleDao {
 
 			stm.executeUpdate();
 
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
