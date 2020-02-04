@@ -15,7 +15,7 @@ import it.objectmethod.supermarket.model.Article;
 public class ArticleInsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String cod = request.getParameter("codice");
@@ -34,9 +34,9 @@ public class ArticleInsServlet extends HttpServlet {
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
 		artDaoImpl.insArticle(newArticle);
 
-		RequestDispatcher forward = request.getServletContext().getRequestDispatcher("/GetArticles");
-		forward.forward(request, response);
-
+		//RequestDispatcher forward = request.getServletContext().getRequestDispatcher("/GetArticles");
+		//forward.forward(request, response);
+		response.sendRedirect("GetArticles");
 	}
 
 }
