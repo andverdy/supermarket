@@ -24,48 +24,38 @@ public class FormViewServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Article article = null;
+		String codArt = request.getParameter("getCod");
+		
+		if(codArt != null) {
+			System.out.println("codice " + codArt);
+			ArticleDao articleDao = new ArticleDaoImpl();
+	
+			article = articleDao.getArticleByCode(codArt);
+		}
 
 		List<Iva> listIva;
-		List<FamAssort> listFamAssort = new ArrayList<>();
+		List<FamAssort> listFamAssort;
 
 		IvaDao ivaDao = new IvaDaoImpl();
 		FamAssortDao fmsDao = new FamAssortDaoImpl();
 
 		listIva = ivaDao.getIva();
 		listFamAssort = fmsDao.getFamAssort();
-		
+
 		request.setAttribute("ivaList", listIva);
 		request.setAttribute("listFms", listFamAssort);
+		request.setAttribute("articleFormRefresh", article);
 		request.getRequestDispatcher("WEB-INF/pages/formIns.jsp").forward(request, response);
 
 	}
 
-	
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Article article = new Article();
-		String codArt = request.getParameter("getCod");
-		System.out.println("codice " + codArt);
-		ArticleDao articleDao = new ArticleDaoImpl();
-		
-		article = articleDao.getArticleByCode(codArt);
-		
-		List<Iva> listIva;
-		List<FamAssort> listFamAssort;
-		
-		IvaDao ivaDao = new IvaDaoImpl();
-		FamAssortDao fmsDao = new FamAssortDaoImpl();
-		
-		listIva = ivaDao.getIva();
-		listFamAssort = fmsDao.getFamAssort();
-		
-		request.setAttribute("ivaList", listIva);
-		request.setAttribute("listFms", listFamAssort);
-		request.setAttribute("articleFormRefresh", article);
-		request.getRequestDispatcher("WEB-INF/pages/formEdit.jsp").forward(request, response);
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doGet(request, response);
+
 	}
-	
+
 }

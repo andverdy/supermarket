@@ -1,6 +1,6 @@
 package it.objectmethod.supermarket.model;
 
-public class Article {
+public class Article implements Comparable<Article>{
 
 	private String codArt;
 	private String descrizione;
@@ -49,9 +49,16 @@ public class Article {
 	}
 
 	@Override
+	public int compareTo(Article a) {
+		if(this.codArt.compareTo(a.codArt) > 0 ) return +1;
+		else if(this.codArt.compareTo(a.codArt) < 0 ) return -1;
+		return 0;
+	}
+	
+	@Override
 	public String toString() {
 		return "codArt = " + codArt + ", descrizione = " + descrizione + ", pzCart = " + pzCart + ", idIva = " + idIva
-				+ ", idFamAss = " + idFamAss;
+				+ ", descFamAss = " + idFamAss;
 	}
 
 }

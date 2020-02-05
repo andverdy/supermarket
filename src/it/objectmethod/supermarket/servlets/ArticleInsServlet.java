@@ -18,37 +18,7 @@ public class ArticleInsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String cod = request.getParameter("codice");
-		String descr = request.getParameter("descriz");
-		int pzCart = Integer.parseInt(request.getParameter("pezziCart"));
-		int iVa = Integer.parseInt(request.getParameter("iva"));
-		int fms = Integer.parseInt(request.getParameter("fam"));
-
-		int result = 0;
-		String message;
-
-		Article newArticle = new Article();
-		newArticle.setCodArt(cod);
-		newArticle.setDescrizione(descr);
-		newArticle.setPzCart(pzCart);
-		newArticle.setIdIva(iVa);
-		newArticle.setIdFamAss(fms);
-
-		ArticleDao artDaoImpl = new ArticleDaoImpl();
-		result = artDaoImpl.insArticle(newArticle);
-		System.out.println("stampa result " + result);
-
-		if (result == 1) {
-			message = "INSERIMENTO AVVENUTO CON SUCCESSO!";
-		}
-
-		else {
-			message = "ERRORE INSERIMENTO!";
-		}
-
-		request.setAttribute("messageInsert", message);
-		RequestDispatcher forward = request.getServletContext().getRequestDispatcher("/GetArticles");
-		forward.forward(request, response);
+		doGet(request, response);
 
 	}
 
@@ -74,7 +44,7 @@ public class ArticleInsServlet extends HttpServlet {
 
 		System.out.println("sono nel metodo doGet della servlet ArticleInsServlet");
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
-		result = artDaoImpl.editArticle(newArticle);
+		result = artDaoImpl.saveOrUpdate(newArticle);
 		System.out.println("stampa result " + result);
 
 		if (result == 1) {

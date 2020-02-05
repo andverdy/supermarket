@@ -16,33 +16,33 @@
 	<br>
 	<form method="post">
 		<label for="cod">Codice Articolo</label><br> 
-		<input id="cod" type="text" name="codice"><br> <br> 
+		<input id="cod" type="text" name="codice" value="${articleFormRefresh.codArt}"><br> <br> 
 		
 		<label for="descr">Descrizione</label><br>
-		<input id="descr" type="text" name="descriz"><br>
+		<input id="descr" type="text" name="descriz" value="${articleFormRefresh.descrizione}"><br>
 		
 		<br> <label for="pz">Pezzi per cartone</label><br>
-		 <input id="pz" name="pezziCart"><br>
+		 <input id="pz" name="pezziCart" value="${articleFormRefresh.pzCart}"><br>
 		<br>
 
-	<label for="cod">Iva</label><br>
+		<label for="cod">Iva</label><br>
 		<select name="iva">
-	<c:forEach items="${ivaList}" var="varIva">
-			<tr>    
-				<option  value= "${varIva.getIdIva()}">${varIva.getDescrizione()}</option>
-			</tr>  
-		</c:forEach>
-	</select> <br> <br>
+			<c:forEach items="${ivaList}" var="varIva">
+				<tr>    
+					<option  value= "${varIva.idIva}">${varIva.descrizione}</option>
+				</tr>  
+			</c:forEach>
+		</select> <br> <br>
 
 
 		<label for="cod">Famiglia Assortimento</label><br>
 		<select name="fam">
-		<c:forEach items="${listFms}" var="varFamAssort">
-			<tr>
-				<option value="${varFamAssort.getId()}">${varFamAssort.getDescrizione()}</option>
-			</tr>
-		</c:forEach>
-	</select>
+			<c:forEach items="${listFms}" var="varFamAssort">
+				<tr>
+					<option value="${varFamAssort.id}">${varFamAssort.descrizione}</option>
+				</tr>
+			</c:forEach>
+		</select>
 		
 		<br> <br><br>
 		<button formaction="InsArticle">Inserisci</button>

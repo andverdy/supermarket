@@ -9,6 +9,4 @@ public interface FamAssortDao {
 	public List<FamAssort> getFamAssort();
 	
 	
-	
-	
 }
