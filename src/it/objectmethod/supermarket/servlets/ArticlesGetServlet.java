@@ -31,6 +31,8 @@ public class ArticlesGetServlet extends HttpServlet {
 		listArticles = articleDao.getArticles();
 
 		System.out.println("sono nel doGet ");
+		
+		
 		request.setAttribute("articlesList", listArticles);
 		request.getRequestDispatcher("WEB-INF/pages/home.jsp").forward(request, response);
 

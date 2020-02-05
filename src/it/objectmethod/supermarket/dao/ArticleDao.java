@@ -12,5 +12,7 @@ public interface ArticleDao {
 
 	public void delArticle();
 
-	public List<Article> updArticle();
+	public int editArticle(Article article);
+	
+	public Article getArticleByCode(String codArt);
 }

@@ -12,15 +12,23 @@
 
 <body>
 	<h1>
-		<br>
-		<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-		&nbsp &nbsp &nbsp --|| SUPERMARKET SHOP ONLINE ||--
+		&nbsp &nbsp &nbsp&nbsp &nbsp  --|| SUPERMARKET SHOP ONLINE ||--
 	</h1>
-	<br>
-	<br>
-	<br>
-          <p>${messageInsert}</p>
+
+	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
+	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
+	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
+	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
+	<img src="https://www.centroclinicoclarense.it/wp-content/uploads/2015/11/psicologo-fobia-supermercato.jpg" alt="Mia Immagine">
+          <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp${messageInsert}
+          </p>
 	<style>
 table, th, td {
 	border: 1px solid black;
@@ -31,9 +39,21 @@ table, th, td {
 
 	<form method="get">
 		<td>
-			<button formaction="FormViewServ">Inserisci Nuovo Articolo</button>
+			<button  formaction="FormViewServ">Inserisci Nuovo Articolo</button>
 		</td>
+		
 	</form> <br>
+
+
+	<!--   <form action="/FormViewServ?param=<&='1'%" method="post">
+		<input type="submit" name="InsBotton" value="Inserisci Articolo">
+		
+	</form>
+
+	<form action="/FormViewServ?param=<&='2'%" method="post">
+		<input type="submit" name="EditBotton" value="Modifica Articolo">
+		
+	</form> -->
 
 	<table>
 		<tr>
@@ -42,7 +62,6 @@ table, th, td {
 			<th>PzCart</th>
 			<th>IdIva</th>
 			<th>IdFamAss</th>
-
 		</tr>
 
 		<c:forEach items="${articlesList}" var="listArticles">
@@ -57,18 +76,19 @@ table, th, td {
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${listArticles.pzCart}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-				
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${listArticles.idIva}
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
-
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${listArticles.idFamAss}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
-			</tr>
+				<td>
+				
+					<form method="post">
+						<button value="${listArticles.codArt}" name="getCod" formaction="FormViewServ">Modifica Articolo</button>
+					</form> 
 		</c:forEach>
-
 
 	</table>
 </body>

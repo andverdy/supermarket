@@ -25,7 +25,7 @@ public class FamAssortDaoImpl implements FamAssortDao {
 
 		try {
 			conn = ConnectionConfig.getConnection();
-			String sql = "SELECT * FROM famassort;;";
+			String sql = "SELECT * FROM famassort;";
 			stm = conn.prepareStatement(sql);
 			rs = stm.executeQuery();
 

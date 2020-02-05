@@ -106,14 +106,97 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
 	public void delArticle() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public List<Article> updArticle() {
-		// TODO Auto-generated method stub
-		return null;
+	public int editArticle(Article articleParam) {
+
+		String sql = "UPDATE articoli SET DESCRIZIONE= ?, PZCART= ?, IDIVA= ?, IDFAMASS= ? WHERE CODART= ?;";
+		Connection conn = null;
+		PreparedStatement stm = null;
+		Article article = new Article();
+		int result = 0;
+
+		try {
+
+			conn = ConnectionConfig.getConnection();
+
+			stm = conn.prepareStatement(sql);
+
+			stm.setString(1, articleParam.getDescrizione());
+			stm.setInt(2, articleParam.getPzCart());
+			stm.setInt(3, articleParam.getIdIva());
+			stm.setInt(4, articleParam.getIdFamAss());
+			stm.setString(5, articleParam.getCodArt());
+			result = stm.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stm != null) {
+					stm.close();
+				}
+			} catch (SQLException se2) {
+			} // nothing we can do
+			try {
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+
+	@Override
+	public Article getArticleByCode(String codArt) {
+
+		Connection conn = null;
+		PreparedStatement stm = null;
+		Article article = new Article();
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT CODART, DESCRIZIONE, PZCART, IDIVA, IDSTATOART, IDFAMASS FROM articoli WHERE CODART = ?;";
+			conn = ConnectionConfig.getConnection();
+			stm = conn.prepareStatement(sql);
+
+			stm.setString(1, codArt);
+			rs = stm.executeQuery();
+
+			while (rs.next()) {
+
+				article.setCodArt(rs.getString("CODART"));
+				article.setDescrizione(rs.getString("DESCRIZIONE"));
+				article.setPzCart(rs.getInt("PZCART"));
+				article.setIdIva(rs.getInt("IDIVA"));
+				article.setIdFamAss(rs.getInt("IDFAMASS"));
+			}
+
+			rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stm != null) {
+					stm.close();
+				}
+			} catch (SQLException se2) {
+			} // nothing we can do
+			try {
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+		}
+
+		return article;
 	}
 
 }
