@@ -61,12 +61,13 @@ public class ArticleDaoImpl implements ArticleDao {
 	}
 
 	@Override
-	public void insArticle(Article article) {
+	public int insArticle(Article article) {
 
 		String sql = "INSERT INTO `alphashop`.`articoli` (`CODART`, `DESCRIZIONE`, `PZCART`, `IDIVA`, `IDFAMASS`) VALUES (?, ?, ?, ?, ?);";
 		Connection conn = null;
 		PreparedStatement stm = null;
 
+		int result = 0;
 		try {
 
 			conn = ConnectionConfig.getConnection();
@@ -79,7 +80,8 @@ public class ArticleDaoImpl implements ArticleDao {
 			stm.setInt(4, article.getIdIva());
 			stm.setInt(5, article.getIdFamAss());
 
-			stm.executeUpdate();
+			result = stm.executeUpdate();
+			System.out.println("stampa result dentro dao " + result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -99,6 +101,7 @@ public class ArticleDaoImpl implements ArticleDao {
 			}
 		}
 
+		return result;
 	}
 
 	@Override

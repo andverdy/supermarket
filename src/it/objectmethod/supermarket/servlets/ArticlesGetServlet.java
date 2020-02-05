@@ -20,6 +20,7 @@ public class ArticlesGetServlet extends HttpServlet {
 		super();
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -29,11 +30,16 @@ public class ArticlesGetServlet extends HttpServlet {
 		ArticleDao articleDao = new ArticleDaoImpl();
 		listArticles = articleDao.getArticles();
 
+		System.out.println("sono nel doGet ");
 		request.setAttribute("articlesList", listArticles);
 		request.getRequestDispatcher("WEB-INF/pages/home.jsp").forward(request, response);
 
 	}
 
-	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
 
+	}
 }

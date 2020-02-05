@@ -8,7 +8,7 @@ public interface ArticleDao {
 
 	public List<Article> getArticles();
 
-	public void insArticle(Article article);
+	public int insArticle(Article article);
 
 	public void delArticle();
 

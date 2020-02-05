@@ -24,6 +24,9 @@ public class ArticleInsServlet extends HttpServlet {
 		int iVa = Integer.parseInt(request.getParameter("iva"));
 		int fms = Integer.parseInt(request.getParameter("fam"));
 
+		int result = 0;
+		String message;
+
 		Article newArticle = new Article();
 		newArticle.setCodArt(cod);
 		newArticle.setDescrizione(descr);
@@ -32,11 +35,21 @@ public class ArticleInsServlet extends HttpServlet {
 		newArticle.setIdFamAss(fms);
 
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
-		artDaoImpl.insArticle(newArticle);
+		result = artDaoImpl.insArticle(newArticle);
+		System.out.println("stampa result " + result);
 
-		//RequestDispatcher forward = request.getServletContext().getRequestDispatcher("/GetArticles");
-		//forward.forward(request, response);
-		response.sendRedirect("GetArticles");
+		if (result == 1) {
+			message = "INSERIMENTO AVVENUTO CON SUCCESSO!";
+		}
+
+		else {
+			message = "ERRORE INSERIMENTO!";
+		}
+
+		request.setAttribute("messageInsert", message);
+		RequestDispatcher forward = request.getServletContext().getRequestDispatcher("/GetArticles");
+		forward.forward(request, response);
+
 	}
 
 }

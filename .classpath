@@ -13,6 +13,5 @@
 	<classpathentry kind="lib" path="C:/Users/music/Downloads/javax.servlet.jar.zip"/>
 	<classpathentry kind="lib" path="C:/Users/music/Downloads/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/music/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48.jar"/>
-	<classpathentry kind="lib" path="C:/Users/music/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

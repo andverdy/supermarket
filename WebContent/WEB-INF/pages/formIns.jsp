@@ -27,9 +27,9 @@
 
 	<label for="cod">Iva</label><br>
 		<select name="iva">
-	<c:forEach items="${ivaList}" var="listIva">
+	<c:forEach items="${ivaList}" var="varIva">
 			<tr>    
-				<option  value= "${listIva.getIdIva()}">${listIva.getDescrizione()}</option>
+				<option  value= "${varIva.getIdIva()}">${varIva.getDescrizione()}</option>
 			</tr>  
 		</c:forEach>
 	</select> <br> <br>
@@ -37,9 +37,9 @@
 
 		<label for="cod">Famiglia Assortimento</label><br>
 		<select name="fam">
-		<c:forEach items="${listFms}" var="listFamAssort">
+		<c:forEach items="${listFms}" var="varFamAssort">
 			<tr>
-				<option value="${listFamAssort.getId()}">${listFamAssort.getDescrizione()}</option>
+				<option value="${varFamAssort.getId()}">${varFamAssort.getDescrizione()}</option>
 			</tr>
 		</c:forEach>
 	</select>
