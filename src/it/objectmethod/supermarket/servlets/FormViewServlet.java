@@ -1,7 +1,6 @@
 package it.objectmethod.supermarket.servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -27,13 +26,9 @@ public class FormViewServlet extends HttpServlet {
 
 		Article article = null;
 		String codArt = request.getParameter("getCod");
-		System.out.println("dammi il codice articolo " + codArt);
 
-		// update
 		if (codArt != null) {
-			System.out.println("sto per fare l'update col codice: " + codArt);
 			ArticleDao articleDao = new ArticleDaoImpl();
-
 			article = articleDao.getArticleByCode(codArt);
 		}
 

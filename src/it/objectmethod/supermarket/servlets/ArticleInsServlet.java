@@ -32,10 +32,6 @@ public class ArticleInsServlet extends HttpServlet {
 		int iVa = Integer.parseInt(request.getParameter("iva"));
 		int fms = Integer.parseInt(request.getParameter("fam"));
 
-		
-		System.out.println("il codice getParameter è: " + cod);
-		System.out.println("la descrizione getParameter è: " + descr);
-		
 		int result = 0;
 		String message;
 
@@ -46,10 +42,13 @@ public class ArticleInsServlet extends HttpServlet {
 		newArticle.setIdIva(iVa);
 		newArticle.setIdFamAss(fms);
 
-		System.out.println("sono nel metodo doGet della servlet ArticleInsServlet");
 		ArticleDao artDaoImpl = new ArticleDaoImpl();
-		result = artDaoImpl.saveOrUpdate(newArticle);
-		System.out.println("stampa result " + result);
+
+		if (artDaoImpl.getArticleByCode(newArticle.getCodArt()) != null) {
+			result = artDaoImpl.update(newArticle);
+		} else {
+			result = artDaoImpl.insert(newArticle);
+		}
 
 		if (result == 1) {
 			message = "INSERIMENTO AVVENUTO CON SUCCESSO!";

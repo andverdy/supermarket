@@ -8,9 +8,9 @@ public interface ArticleDao {
 
 	public List<Article> getArticles();
 
-	public int saveOrUpdate(Article article);
+	public int insert(Article article);
 	
-	public void delArticle();
-
+	public int update(Article article);
+	
 	public Article getArticleByCode(String codArt);
 }

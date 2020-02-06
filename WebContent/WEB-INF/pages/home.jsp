@@ -21,7 +21,7 @@
 	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
 	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
 	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
-	<img src="https://www.centroclinicoclarense.it/wp-content/uploads/2015/11/psicologo-fobia-supermercato.jpg" alt="Mia Immagine">
+	
           <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
@@ -41,16 +41,6 @@ table, th, td {
 		<button  formaction="FormViewServ">Inserisci Nuovo Articolo</button>		
 	</form> <br>
 
-
-	<!--   <form action="/FormViewServ?param=<&='1'%" method="post">
-		<input type="submit" name="InsBotton" value="Inserisci Articolo">
-		
-	</form>
-
-	<form action="/FormViewServ?param=<&='2'%" method="post">
-		<input type="submit" name="EditBotton" value="Modifica Articolo">
-		
-	</form> -->
 
 	<table>
 		<tr>
