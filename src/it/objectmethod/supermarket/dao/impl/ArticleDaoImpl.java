@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -14,30 +16,35 @@ import it.objectmethod.supermarket.model.Article;
 public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
-	public Map<Article,String> getArticles() {
+	public List<Article> getArticles() {
 
-		Article article = null;
+		
 		Connection conn = null;
 		PreparedStatement stm = null;
 		ResultSet rs = null;
-		Map<Article,String> mapArticles = new TreeMap<>();
+		List<Article> listArticle = new ArrayList<Article>();
 
 		try {
 			conn = ConnectionConfig.getConnection();
-			String sql = "select a.CODART,a.DESCRIZIONE, a.PZCART, a.IDIVA, f.DESCRIZIONE as DESCFAMASSORT\r\n" + 
-					"from articoli a, famassort f\r\n" + 
-					"where a.IDFAMASS = f.ID";
+			String sql = "select a.CODART,a.DESCRIZIONE,\r\n" + 
+					" a.PZCART, i.DESCRIZIONE as DESCIVA, f.DESCRIZIONE as DESCFAMASSORT, a.IDIVA, a.IDFAMASS\r\n" + 
+					"from articoli a join famassort f on a.IDFAMASS = f.ID \r\n" + 
+					"join iva i on a.IDIVA = i.IDIVA;";
 			stm = conn.prepareStatement(sql);
 			rs = stm.executeQuery();
 
 			while (rs.next()) {
-				article = new Article();
+				
+				Article article = new Article();
 				article.setCodArt(rs.getString("CODART"));
 				article.setDescrizione(rs.getString("DESCRIZIONE"));
 				article.setPzCart(rs.getInt("PZCART"));
+				article.setIvaDesc(rs.getString("DESCIVA"));
+				article.setFamAssDesc(rs.getString("DESCFAMASSORT"));
 				article.setIdIva(rs.getInt("IDIVA"));
+				article.setIdFamAss(rs.getInt("IDFAMASS"));
 				
-				mapArticles.put(article, rs.getString("DESCFAMASSORT"));
+				listArticle.add(article);
 
 			}
 			rs.close();
@@ -59,7 +66,7 @@ public class ArticleDaoImpl implements ArticleDao {
 			}
 		}
 
-		return mapArticles;
+		return listArticle;
 	}
 
 	@Override

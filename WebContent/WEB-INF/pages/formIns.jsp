@@ -9,42 +9,60 @@
 </head>
 <body>
 
-	<br><br>
-	
+	<br>
+	<br>
+
 	<h1>&nbsp&nbsp&nbsp&nbsp&nbsp GESTIONE ARTICOLI SUPERMARKET</h1>
 	<br>
 	<br>
 	<form method="post">
-		<label for="cod">Codice Articolo</label><br> 
-		<input id="cod" type="text" name="codice" value="${articleFormRefresh.codArt}"><br> <br> 
+		<label for="cod">Codice Articolo</label><br>
+		 <input id="cod" type="text" name="codice" value="${articleFormRefresh.codArt}"><br>
+		 
+		<br> <label for="descr">Descrizione</label><br> 
+		<input id="descr" type="text" name="descriz" value="${articleFormRefresh.descrizione}"><br> <br>
 		
-		<label for="descr">Descrizione</label><br>
-		<input id="descr" type="text" name="descriz" value="${articleFormRefresh.descrizione}"><br>
+		<label for="pz">Pezzi per cartone</label><br> 
+		<input id="pz" name="pezziCart" value="${articleFormRefresh.pzCart}"><br>
 		
-		<br> <label for="pz">Pezzi per cartone</label><br>
-		 <input id="pz" name="pezziCart" value="${articleFormRefresh.pzCart}"><br>
-		<br>
+		<br> <label for="cod">Iva</label><br> 
+				<select name="iva">
 
-		<label for="cod">Iva</label><br>
-		<select name="iva">
-			<c:forEach items="${ivaList}" var="varIva">
-				<tr>    
-					<option  value= "${varIva.idIva}">${varIva.descrizione}</option>
-				</tr>  
+					<c:forEach items="${ivaList}" var="varIva">
+						<c:choose>
+
+							<c:when test="${articleFormRefresh.idIva == varIva.idIva}">
+								<option selected="selected"  value="${varIva.idIva}">${varIva.descrizione}</option>
+        					 </c:when>
+
+							 <c:otherwise>
+							 	<option value="${varIva.idIva}">${varIva.descrizione}</option>
+         					</c:otherwise>
+						
+						</c:choose>
+							
+
 			</c:forEach>
-		</select> <br> <br>
 
 
-		<label for="cod">Famiglia Assortimento</label><br>
+		</select> <br> <br> <label for="cod">Famiglia Assortimento</label><br>
 		<select name="fam">
 			<c:forEach items="${listFms}" var="varFamAssort">
-				<tr>
-					<option value="${varFamAssort.id}">${varFamAssort.descrizione}</option>
-				</tr>
+					<c:choose>
+
+							<c:when test="${articleFormRefresh.idFamAss == varFamAssort.id}">
+								<option selected="selected" value="${varFamAssort.id}">${varFamAssort.descrizione}</option>
+        					 </c:when>
+
+							 <c:otherwise>
+							 	<option value="${varFamAssort.id}">${varFamAssort.descrizione}</option>
+         					</c:otherwise>
+						
+						</c:choose>
+				
+
 			</c:forEach>
-		</select>
-		
-		<br> <br><br>
+		</select> <br> <br> <br>
 		<button formaction="InsArticle">Inserisci</button>
 
 	</form>

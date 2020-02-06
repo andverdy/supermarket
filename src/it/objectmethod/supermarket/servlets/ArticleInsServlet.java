@@ -32,6 +32,10 @@ public class ArticleInsServlet extends HttpServlet {
 		int iVa = Integer.parseInt(request.getParameter("iva"));
 		int fms = Integer.parseInt(request.getParameter("fam"));
 
+		
+		System.out.println("il codice getParameter è: " + cod);
+		System.out.println("la descrizione getParameter è: " + descr);
+		
 		int result = 0;
 		String message;
 

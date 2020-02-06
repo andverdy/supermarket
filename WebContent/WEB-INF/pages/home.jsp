@@ -57,33 +57,33 @@ table, th, td {
 			<th>Codice Articolo</th>
 			<th>Descrizione</th>
 			<th>PzCart</th>
-			<th>IdIva</th>
+			<th>Iva</th>
 			<th>FamAssort</th>
 		</tr>
 
-		<c:forEach items="${mapArticles}" var="entry">
+		<c:forEach items="${articleList}" var="article">
 			<tr>
-				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ${entry.key.codArt}
-					&nbsp&nbsp&nbsp&nbsp</td>
+				<td>&nbsp&nbsp&nbsp&nbsp&nbsp ${article.codArt}
+					&nbsp&nbsp&nbsp</td>
 
-				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					${entry.key.descrizione}
+				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					${article.descrizione}
+					</td>
+
+				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					${article.pzCart}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					${article.ivaDesc}
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
-				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					${entry.key.pzCart}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					${entry.key.idIva}
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-
-				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					${entry.value}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					${article.famAssDesc}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
 				<td>
 				
 					<form method="post">
-						<button value="${entry.key.codArt}" name="getCod" formaction="FormViewServ">Modifica Articolo</button>
+						<button value="${article.codArt}" name="getCod" formaction="FormViewServ">Modifica Articolo</button>
 					</form> 
 		</c:forEach>
 

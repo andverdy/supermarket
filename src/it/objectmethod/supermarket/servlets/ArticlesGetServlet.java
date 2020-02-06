@@ -1,6 +1,7 @@
 package it.objectmethod.supermarket.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,18 +29,13 @@ public class ArticlesGetServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		Map<Article,String> mapArticles = null;
-
+		List<Article> listArticle = new ArrayList<Article>();
 		ArticleDao articleDao = new ArticleDaoImpl();
-		mapArticles = articleDao.getArticles();
+		listArticle = articleDao.getArticles();
 
 		System.out.println("sono nel doGet ");
-		
-		FamAssortDao fmsDao = new FamAssortDaoImpl();
-		List<FamAssort> listFamAssort = fmsDao.getFamAssort();
-		
-		request.setAttribute("mapArticles", mapArticles);
-		request.setAttribute("listFamAssort", listFamAssort);
+
+		request.setAttribute("articleList", listArticle);
 		request.getRequestDispatcher("WEB-INF/pages/home.jsp").forward(request, response);
 
 	}

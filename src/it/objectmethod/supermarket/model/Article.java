@@ -1,12 +1,14 @@
 package it.objectmethod.supermarket.model;
 
-public class Article implements Comparable<Article>{
+public class Article {
 
 	private String codArt;
 	private String descrizione;
 	private int pzCart;
 	private int idIva;
+	private String ivaDesc;
 	private int idFamAss;
+	private String famAssDesc;
 
 	public String getCodArt() {
 		return codArt;
@@ -40,6 +42,14 @@ public class Article implements Comparable<Article>{
 		this.idIva = idIva;
 	}
 
+	public String getIvaDesc() {
+		return ivaDesc;
+	}
+
+	public void setIvaDesc(String ivaDesc) {
+		this.ivaDesc = ivaDesc;
+	}
+
 	public int getIdFamAss() {
 		return idFamAss;
 	}
@@ -48,17 +58,12 @@ public class Article implements Comparable<Article>{
 		this.idFamAss = idFamAss;
 	}
 
-	@Override
-	public int compareTo(Article a) {
-		if(this.codArt.compareTo(a.codArt) > 0 ) return +1;
-		else if(this.codArt.compareTo(a.codArt) < 0 ) return -1;
-		return 0;
+	public String getFamAssDesc() {
+		return famAssDesc;
 	}
-	
-	@Override
-	public String toString() {
-		return "codArt = " + codArt + ", descrizione = " + descrizione + ", pzCart = " + pzCart + ", idIva = " + idIva
-				+ ", descFamAss = " + idFamAss;
+
+	public void setFamAssDesc(String famAssDesc) {
+		this.famAssDesc = famAssDesc;
 	}
 
 }

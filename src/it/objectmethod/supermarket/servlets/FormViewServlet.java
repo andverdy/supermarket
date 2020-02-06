@@ -24,13 +24,16 @@ public class FormViewServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		Article article = null;
 		String codArt = request.getParameter("getCod");
-		
-		if(codArt != null) {
-			System.out.println("codice " + codArt);
+		System.out.println("dammi il codice articolo " + codArt);
+
+		// update
+		if (codArt != null) {
+			System.out.println("sto per fare l'update col codice: " + codArt);
 			ArticleDao articleDao = new ArticleDaoImpl();
-	
+
 			article = articleDao.getArticleByCode(codArt);
 		}
 
