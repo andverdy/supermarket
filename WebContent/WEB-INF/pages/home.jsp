@@ -11,11 +11,21 @@
 </head>
 
 <body>
+
+		<form method="get">
+		<button  name="cartView" formaction="viewCart">Visualizza Carrello</button>
+		</form>
+
+
 	<h1>
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 		&nbsp &nbsp &nbsp&nbsp &nbsp  --|| SUPERMARKET SHOP ONLINE ||--
 	</h1>
+
+   
+   
+
 
 	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
 	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
@@ -58,23 +68,29 @@ table, th, td {
 
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${article.descrizione}
-					</td>
+				</td>
 
-				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					${article.pzCart}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<td>&nbsp&nbsp&nbsp&nbsp&nbsp
+					${article.pzCart}&nbsp&nbsp&nbsp&nbsp
 
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${article.ivaDesc}
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+					</td>
 
 				<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					${article.famAssDesc}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+					${article.famAssDesc}</td>
 
 				<td>
-				
 					<form method="post">
 						<button value="${article.codArt}" name="getCod" formaction="FormViewServ">Modifica Articolo</button>
 					</form> 
+				</td>
+				<td>
+					<form method="post">
+						<button value="${article.codArt}" name="codArt" formaction="addCart">Aggiungi al Carrello</button>
+					</form>
+				</td>
+				</tr>	
 		</c:forEach>
 
 	</table>

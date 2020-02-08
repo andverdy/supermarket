@@ -25,7 +25,8 @@ public class ArticleDaoImpl implements ArticleDao {
 			conn = ConnectionConfig.getConnection();
 			String sql = "select a.CODART,a.DESCRIZIONE,\r\n"
 					+ " a.PZCART, i.DESCRIZIONE as DESCIVA, f.DESCRIZIONE as DESCFAMASSORT, a.IDIVA, a.IDFAMASS\r\n"
-					+ "from articoli a join famassort f on a.IDFAMASS = f.ID \r\n" + "join iva i on a.IDIVA = i.IDIVA;";
+					+ "from articoli a join famassort f on a.IDFAMASS = f.ID \r\n"
+					+ "join iva i on a.IDIVA = i.IDIVA limit 200;";
 			stm = conn.prepareStatement(sql);
 			rs = stm.executeQuery();
 

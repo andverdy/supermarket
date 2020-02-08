@@ -33,4 +33,26 @@
 		<url-pattern>/FormViewServ</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>addArticleCart</servlet-name>
+		<servlet-class>it.objectmethod.supermarket.servlets.AddArticleToCartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addArticleCart</servlet-name>
+		<url-pattern>/addCart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>viewArticleCart</servlet-name>
+		<servlet-class>it.objectmethod.supermarket.servlets.ViewArticlesToCartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewArticleCart</servlet-name>
+		<url-pattern>/viewCart</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
 </web-app>
