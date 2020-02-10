@@ -26,38 +26,24 @@ public class AddArticleToCartServlet extends HttpServlet {
 
 		String codArt = request.getParameter("codArt");
 
-		Article article = this.articleDao.getArticleByCode(codArt);
-
-		ArticleCart articleCart = new ArticleCart();
-		articleCart.setCodArt(article.getCodArt());
-		articleCart.setDescrizione(article.getDescrizione());
-		articleCart.setFamAssDesc(article.getFamAssDesc());
-		articleCart.setIdFamAss(article.getIdFamAss());
-		articleCart.setIdIva(article.getIdIva());
-		articleCart.setIvaDesc(article.getIvaDesc());
-		articleCart.setPzCart(articleCart.getPzCart());
+		ArticleCart articleCart = null;
 
 		HttpSession session = request.getSession();
 		String message = null;
-
-		if (session.getAttribute("cart") == null) {
-			Map<String, ArticleCart> cart = new HashMap<String, ArticleCart>();
-			articleCart.setQuantita(articleCart.getQuantita() + 1);
-			cart.put(codArt, articleCart);
-			session.setAttribute("cart", cart);
+		Map<String, ArticleCart> cart = new HashMap<String, ArticleCart>();
+		if (session.getAttribute("cart") != null) {
+			cart = (Map<String, ArticleCart>) session.getAttribute("cart");
 		}
 
-		else if (session.getAttribute("cart") != null) {
-			Map<String, ArticleCart> cart = (Map<String, ArticleCart>) session.getAttribute("cart");
-			if (cart.containsKey(codArt)) {
-				cart.get(codArt).setQuantita(cart.get(codArt).getQuantita() + 1);
-			} else {
-				articleCart.setQuantita(articleCart.getQuantita() + 1);
-				cart.put(codArt, articleCart);
-			}
-			session.setAttribute("cart", cart);
+		if (cart.containsKey(codArt)) {
+			articleCart = cart.get(codArt);
+		} else {
+			Article article = this.articleDao.getArticleByCode(codArt);
+			articleCart = (ArticleCart) article;
 		}
-
+		articleCart.setQuantita(articleCart.getQuantita() + 1);
+		cart.put(codArt, articleCart);
+		session.setAttribute("cart", cart);
 		message = "ARTICOLO AGGIUNTO AL CARRELLO!";
 
 		request.setAttribute("messageInsert", message);

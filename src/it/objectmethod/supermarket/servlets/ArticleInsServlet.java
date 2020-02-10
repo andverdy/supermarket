@@ -52,9 +52,7 @@ public class ArticleInsServlet extends HttpServlet {
 
 		if (result == 1) {
 			message = "INSERIMENTO AVVENUTO CON SUCCESSO!";
-		}
-
-		else {
+		} else {
 			message = "ERRORE INSERIMENTO!";
 		}
 
