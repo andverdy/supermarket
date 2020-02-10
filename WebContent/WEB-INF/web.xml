@@ -4,7 +4,7 @@
 	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
-	
+
 	<servlet>
 		<servlet-name>getArticles</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.ArticlesGetServlet</servlet-class>
@@ -13,8 +13,6 @@
 		<servlet-name>getArticles</servlet-name>
 		<url-pattern>/GetArticles</url-pattern>
 	</servlet-mapping>
-
-
 	<servlet>
 		<servlet-name>insArticle</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.ArticleInsServlet</servlet-class>
@@ -23,7 +21,6 @@
 		<servlet-name>insArticle</servlet-name>
 		<url-pattern>/InsArticle</url-pattern>
 	</servlet-mapping>
-	
 	<servlet>
 		<servlet-name>formOneArticles</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.FormViewServlet</servlet-class>
@@ -32,7 +29,6 @@
 		<servlet-name>formOneArticles</servlet-name>
 		<url-pattern>/FormViewServ</url-pattern>
 	</servlet-mapping>
-	
 	<servlet>
 		<servlet-name>addArticleCart</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.AddArticleToCartServlet</servlet-class>
@@ -41,7 +37,6 @@
 		<servlet-name>addArticleCart</servlet-name>
 		<url-pattern>/addCart</url-pattern>
 	</servlet-mapping>
-	
 	<servlet>
 		<servlet-name>viewArticleCart</servlet-name>
 		<servlet-class>it.objectmethod.supermarket.servlets.ViewArticlesToCartServlet</servlet-class>
@@ -50,9 +45,4 @@
 		<servlet-name>viewArticleCart</servlet-name>
 		<url-pattern>/viewCart</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-	
-	
 </web-app>
