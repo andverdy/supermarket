@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,7 @@
 	<br>
 
 	<h1>&nbsp&nbsp&nbsp&nbsp&nbsp GESTIONE ARTICOLI SUPERMARKET</h1>
+	
 	<br>
 	<br>
 	<form method="post">
@@ -40,10 +42,7 @@
          					</c:otherwise>
 						
 						</c:choose>
-							
-
 			</c:forEach>
-
 
 		</select> <br> <br> <label for="cod">Famiglia Assortimento</label><br>
 		<select name="fam">
@@ -60,11 +59,12 @@
 						
 						</c:choose>
 				
-
 			</c:forEach>
 		</select> <br> <br> <br>
-		<button formaction="InsArticle">Inserisci</button>
-
+	 
+		<button  formaction="insArt">Inserisci Articolo</button>
+	
+	
 	</form>
 
 </body>

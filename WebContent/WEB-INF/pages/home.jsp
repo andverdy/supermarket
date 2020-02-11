@@ -13,7 +13,7 @@
 <body>
 
 		<form method="get">
-		<button  name="cartView" formaction="viewCart">Visualizza Carrello</button>
+		<button  name="cartView" formaction="viewArticlesToCart">Visualizza Carrello</button>
 		</form>
 
 
@@ -22,9 +22,6 @@
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 		&nbsp &nbsp &nbsp&nbsp &nbsp  --|| SUPERMARKET SHOP ONLINE ||--
 	</h1>
-
-   
-   
 
 
 	&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp
@@ -37,8 +34,16 @@
           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp${messageInsert}
+           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp${message}
           </p>
+          <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+           &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ${messageInsertCart}
+          </p>
+          
 	<style>
 table, th, td {
 	border: 1px solid black;
@@ -48,7 +53,7 @@ table, th, td {
 <body>
 
 	<form method="get">
-		<button  formaction="FormViewServ">Inserisci Nuovo Articolo</button>		
+		<button  formaction="formView">Inserisci Nuovo Articolo</button>		
 	</form> <br>
 
 
@@ -82,7 +87,7 @@ table, th, td {
 
 				<td>
 					<form method="post">
-						<button value="${article.codArt}" name="getCod" formaction="FormViewServ">Modifica Articolo</button>
+						<button value="${article.codArt}" name="getCod" formaction="formView">Modifica Articolo</button>
 					</form> 
 				</td>
 				<td>

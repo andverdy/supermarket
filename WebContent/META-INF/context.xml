@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <Context path="supermarket">
 
 	<Resource auth="Container"
 		driverClassName="com.mysql.jdbc.Driver" name="jdbc/local"
-		username="root" password="rootroot" type="javax.sql.DataSource"
-		url="jdbc:mysql://localhost:3306/supermarket" maxTotal="20"
+		username="root" password="123stella" type="javax.sql.DataSource"
+		url="jdbc:mysql://localhost:3306/alphashop" maxTotal="20"
 		validationQuery="select count(1)" />
 
 </Context>

@@ -15,7 +15,7 @@
 	<br>
 
 	<form method="get">
-		<button formaction="GetArticles">HOME</button>
+		<button formaction="getArticles">HOME</button>
 	</form>
 	<br>
 
