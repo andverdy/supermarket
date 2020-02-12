@@ -8,7 +8,6 @@ public class ArticleCart extends Article {
 	}
 
 	public ArticleCart(Article article) {
-		
 
 		this.setCodArt(article.getCodArt());
 		this.setDescrizione(article.getDescrizione());

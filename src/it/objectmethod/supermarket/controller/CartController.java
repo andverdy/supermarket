@@ -21,6 +21,7 @@ public class CartController {
 
 	private ArticleDao articleDao = new ArticleDaoImpl();
 
+	
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/addCart")
 	public String addToCart(@RequestParam(value = "codArt", required = false) String codArt, ModelMap model,
