@@ -2,30 +2,20 @@ package it.objectmethod.supermarket.dao.impl;
 
 import java.util.List;
 
-import javax.sql.DataSource;
-
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 
 import it.objectmethod.supermarket.dao.FamAssortDao;
 import it.objectmethod.supermarket.model.FamAssort;
-import it.objectmethod.supermarket.model.mapper.FamAssMapper;
 
-public class FamAssortDaoImpl implements FamAssortDao {
-
-	@SuppressWarnings("unused")
-	private DataSource dataSource;
-	private JdbcTemplate jdbcTemplate;
-
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
+public class FamAssortDaoImpl extends NamedParameterJdbcDaoSupport implements FamAssortDao {
 
 	@Override
 	public List<FamAssort> getFamAssort() {
 
 		String sql = "SELECT * FROM famassort;";
-		List<FamAssort> listFamAss = jdbcTemplate.query(sql, new FamAssMapper());
+		List<FamAssort> listFamAss = getJdbcTemplate().query(sql,
+				new BeanPropertyRowMapper<FamAssort>(FamAssort.class));
 		return listFamAss;
 	}
 
