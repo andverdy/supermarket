@@ -5,10 +5,10 @@ public class Article {
 	private String codArt;
 	private String descrizione;
 	private int pzCart;
-	private int idIva;
 	private String ivaDesc;
-	private int idFamAss;
 	private String famAssDesc;
+	private int idIva;
+	private int idFamAss;
 
 	public String getCodArt() {
 		return codArt;
@@ -34,14 +34,6 @@ public class Article {
 		this.pzCart = pzCart;
 	}
 
-	public int getIdIva() {
-		return idIva;
-	}
-
-	public void setIdIva(int idIva) {
-		this.idIva = idIva;
-	}
-
 	public String getIvaDesc() {
 		return ivaDesc;
 	}
@@ -50,20 +42,28 @@ public class Article {
 		this.ivaDesc = ivaDesc;
 	}
 
-	public int getIdFamAss() {
-		return idFamAss;
-	}
-
-	public void setIdFamAss(int idFamAss) {
-		this.idFamAss = idFamAss;
-	}
-
 	public String getFamAssDesc() {
 		return famAssDesc;
 	}
 
 	public void setFamAssDesc(String famAssDesc) {
 		this.famAssDesc = famAssDesc;
+	}
+
+	public int getIdIva() {
+		return idIva;
+	}
+
+	public void setIdIva(int idIva) {
+		this.idIva = idIva;
+	}
+
+	public int getIdFamAss() {
+		return idFamAss;
+	}
+
+	public void setIdFamAss(int idFamAss) {
+		this.idFamAss = idFamAss;
 	}
 
 }

@@ -21,11 +21,4 @@ public class FamAssort {
 		this.descrizione = descrizione;
 	}
 
-	@Override
-	public String toString() {
-		return "FamAssort id = " + id + ", descrizione = " + descrizione;
-	}
-
-	
-	
 }

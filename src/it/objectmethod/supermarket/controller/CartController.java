@@ -6,22 +6,22 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.objectmethod.supermarket.dao.ArticleDao;
-import it.objectmethod.supermarket.dao.impl.ArticleDaoImpl;
 import it.objectmethod.supermarket.model.Article;
 import it.objectmethod.supermarket.model.ArticleCart;
 
 @Controller
 public class CartController {
 
-	private ArticleDao articleDao = new ArticleDaoImpl();
+	@Autowired
+	private ArticleDao articleDao;
 
-	
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/addCart")
 	public String addToCart(@RequestParam(value = "codArt", required = false) String codArt, ModelMap model,

@@ -16,6 +16,31 @@
 		base-package="it.objectmethod.supermarket" />
 	<mvc:default-servlet-handler />
 
+	<bean id="articleDao"
+		class="it.objectmethod.supermarket.dao.impl.ArticleDaoImpl">
+		<property name="dataSource" ref="dataSourceObject" />
+	</bean>
+
+	<bean id="ivaDao"
+		class="it.objectmethod.supermarket.dao.impl.IvaDaoImpl">
+		<property name="dataSource" ref="dataSourceObject" />
+	</bean>
+
+	<bean id="famAssDao"
+		class="it.objectmethod.supermarket.dao.impl.FamAssortDaoImpl">
+		<property name="dataSource" ref="dataSourceObject" />
+	</bean>
+
+	<bean id="dataSourceObject"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/alphashop" />
+		<property name="username" value="root" />
+		<property name="password" value="123stella" />
+	</bean>
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"

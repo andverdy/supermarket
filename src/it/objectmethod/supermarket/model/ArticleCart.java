@@ -27,9 +27,4 @@ public class ArticleCart extends Article {
 		this.quantita = quantita;
 	}
 
-	@Override
-	public String toString() {
-		return "ArticleCart [quantita=" + quantita + "]";
-	}
-
 }
