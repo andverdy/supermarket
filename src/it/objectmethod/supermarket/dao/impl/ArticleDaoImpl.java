@@ -3,6 +3,7 @@ package it.objectmethod.supermarket.dao.impl;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
@@ -81,8 +82,8 @@ public class ArticleDaoImpl extends NamedParameterJdbcDaoSupport implements Arti
 		BeanPropertyRowMapper<Article> rm = new BeanPropertyRowMapper<Article>(Article.class);
 		try {
 			article = getJdbcTemplate().queryForObject(sql, new Object[] { codArt }, rm);
-		} catch (DataAccessException e) {
-			e.printStackTrace();
+		} catch (EmptyResultDataAccessException e) {
+			System.out.println("Non stampo l'eccezione, Articolo inserito");
 		}
 
 		return article;
