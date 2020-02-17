@@ -80,7 +80,7 @@ public class ArticleDaoImpl implements ArticleDao {
 		try {
 			article = this.jdbcTemplate.queryForObject(sql, new Object[] { codArt }, new ArticleMapper());
 		} catch (DataAccessException e) {
-			System.out.println("Eccezione DataAccessException controllata, articolo inserito");
+			e.printStackTrace();
 		}
 
 		return article;
