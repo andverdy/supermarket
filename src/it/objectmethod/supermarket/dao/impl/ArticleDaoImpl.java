@@ -83,7 +83,7 @@ public class ArticleDaoImpl extends NamedParameterJdbcDaoSupport implements Arti
 		try {
 			article = getJdbcTemplate().queryForObject(sql, new Object[] { codArt }, rm);
 		} catch (EmptyResultDataAccessException e) {
-			System.out.println("Non stampo l'eccezione, Articolo inserito");
+			e.printStackTrace();
 		}
 
 		return article;
